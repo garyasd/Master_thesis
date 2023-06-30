@@ -1,0 +1,779 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{elber2022PanGenie}{article}{}
+      \name{author}{1}{}{%
+        {{hash=daa64587e1049b7024a2a600a21ac00d}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Jana\bibnamedelima Ebler},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {nature genetics}%
+      }
+      \strng{namehash}{daa64587e1049b7024a2a600a21ac00d}
+      \strng{fullhash}{daa64587e1049b7024a2a600a21ac00d}
+      \strng{bibnamehash}{daa64587e1049b7024a2a600a21ac00d}
+      \strng{authorbibnamehash}{daa64587e1049b7024a2a600a21ac00d}
+      \strng{authornamehash}{daa64587e1049b7024a2a600a21ac00d}
+      \strng{authorfullhash}{daa64587e1049b7024a2a600a21ac00d}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature genetics}
+      \field{number}{4}
+      \field{title}{Pangenome-based genome inference allows efficient and accurate genotyping across a wide spectrum of variant classes}
+      \field{volume}{54}
+      \field{year}{2022}
+      \field{pages}{518\bibrangedash 525}
+      \range{pages}{8}
+    \endentry
+    \entry{haimo2023MaskedPanGenie}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f59cd511e4a467a1d3db78c83141f7d0}{%
+           family={Häntze},
+           familyi={H\bibinitperiod},
+           given={Hartmut},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{f59cd511e4a467a1d3db78c83141f7d0}
+      \strng{fullhash}{f59cd511e4a467a1d3db78c83141f7d0}
+      \strng{bibnamehash}{f59cd511e4a467a1d3db78c83141f7d0}
+      \strng{authorbibnamehash}{f59cd511e4a467a1d3db78c83141f7d0}
+      \strng{authornamehash}{f59cd511e4a467a1d3db78c83141f7d0}
+      \strng{authorfullhash}{f59cd511e4a467a1d3db78c83141f7d0}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bioinformatics}
+      \field{note}{inpress}
+      \field{title}{Effects of Spaced Seeds on Alignment-Free Genotyping with PanGenie}
+      \field{year}{2023}
+    \endentry
+    \entry{ALTSCHUL1990Blast}{article}{}
+      \name{author}{5}{}{%
+        {{hash=b927ed90e6cf748b2b81e18cb1886f8c}{%
+           family={Altschul},
+           familyi={A\bibinitperiod},
+           given={Stephen\bibnamedelima F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=1c2560e77e0430d3a44f0f96961c9539}{%
+           family={Gish},
+           familyi={G\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod}}}%
+        {{hash=c13772644daf4bc5872dadebc400007c}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Webb},
+           giveni={W\bibinitperiod}}}%
+        {{hash=0df3272f32e5082671c327a5b8a0f352}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Eugene\bibnamedelima W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=cbc45a55c63335eebae2bcd2c7739c80}{%
+           family={Lipman},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ScienceDirect}%
+      }
+      \strng{namehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{fullhash}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{bibnamehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{authorbibnamehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{authornamehash}{4f6e93d6b6fee4c1634d7edf3febba12}
+      \strng{authorfullhash}{44d562514527c37cb1da4ff38faa11ab}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{3}
+      \field{title}{Basic local alignment search tool}
+      \field{volume}{215}
+      \field{year}{1990}
+      \field{pages}{403\bibrangedash 410}
+      \range{pages}{8}
+    \endentry
+    \entry{MaB2002PatternHunter}{article}{}
+      \name{author}{3}{}{%
+        {{hash=fd154e017fda1bfe38019313cb5f07f1}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=111e5b8cd5b7bd6ab0ec4055ff963da9}{%
+           family={Tromp},
+           familyi={T\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=dbe83fd8da75338203d4e8dd0e20be17}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Academic}%
+      }
+      \strng{namehash}{7d0262a5b665ebd68d07e668587305ec}
+      \strng{fullhash}{7d0262a5b665ebd68d07e668587305ec}
+      \strng{bibnamehash}{7d0262a5b665ebd68d07e668587305ec}
+      \strng{authorbibnamehash}{7d0262a5b665ebd68d07e668587305ec}
+      \strng{authornamehash}{7d0262a5b665ebd68d07e668587305ec}
+      \strng{authorfullhash}{7d0262a5b665ebd68d07e668587305ec}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bioinformatics}
+      \field{number}{3}
+      \field{title}{PatternHunter: faster and more sensitive homology search}
+      \field{volume}{18}
+      \field{year}{2002}
+      \field{pages}{440\bibrangedash 445}
+      \range{pages}{6}
+    \endentry
+    \entry{Lucian2011SpEED}{article}{}
+      \name{author}{3}{}{%
+        {{hash=99dda30aa5893393af447f112a05e11e}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Lucian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dd664366c96f50bde9a221efce94d6f4}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Silvana},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9427217acfd561d4a42ca00e318c237f}{%
+           family={Mansouri\bibnamedelima Bigvand},
+           familyi={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Anahita},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Academic}%
+      }
+      \strng{namehash}{8a7e26c64ff0c4e8dd7267ec6fcf54c9}
+      \strng{fullhash}{8a7e26c64ff0c4e8dd7267ec6fcf54c9}
+      \strng{bibnamehash}{8a7e26c64ff0c4e8dd7267ec6fcf54c9}
+      \strng{authorbibnamehash}{8a7e26c64ff0c4e8dd7267ec6fcf54c9}
+      \strng{authornamehash}{8a7e26c64ff0c4e8dd7267ec6fcf54c9}
+      \strng{authorfullhash}{8a7e26c64ff0c4e8dd7267ec6fcf54c9}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bioinformatics}
+      \field{number}{17}
+      \field{title}{SpEED: fast computation of sensitive spaced seeds}
+      \field{volume}{27}
+      \field{year}{2011}
+      \field{pages}{2433\bibrangedash 2434}
+      \range{pages}{2}
+    \endentry
+    \entry{Hahn2016Rasbhari}{article}{}
+      \name{author}{5}{}{%
+        {{hash=d50c1330550140382752e1a71a47a930}{%
+           family={Hahn},
+           familyi={H\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ff9c3c8ed5cdaa81143a088a11acf88c}{%
+           family={Leimeister},
+           familyi={L\bibinitperiod},
+           given={Chris-Andre},
+           giveni={C\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=703e79c893239f2afce436ce220fe6ec}{%
+           family={Ounit},
+           familyi={O\bibinitperiod},
+           given={Rachid},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7d2d637c86220863f35efb2ff1308ad5}{%
+           family={Lonardi},
+           familyi={L\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a042b6f4d1170d3515469294a3d6bcbc}{%
+           family={Morgenstern},
+           familyi={M\bibinitperiod},
+           given={Burkhard},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{5fa6c31472f7575839ba8820033c55fb}
+      \strng{fullhash}{9636bc50fe50126c179b9338a02af4cc}
+      \strng{bibnamehash}{5fa6c31472f7575839ba8820033c55fb}
+      \strng{authorbibnamehash}{5fa6c31472f7575839ba8820033c55fb}
+      \strng{authornamehash}{5fa6c31472f7575839ba8820033c55fb}
+      \strng{authorfullhash}{9636bc50fe50126c179b9338a02af4cc}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLoS Computational Biology}
+      \field{title}{rasbhari: Optimizing Spaced Seeds for Database Searching, Read Mapping and Alignment-Free Sequence Comparison}
+      \field{volume}{12}
+      \field{year}{2016}
+      \field{pages}{e1005107}
+      \range{pages}{-1}
+    \endentry
+    \entry{Kucherov2006Sensitivity}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ae92fb9cca4c45facb56c4dc34c59f87}{%
+           family={Kucherov\bibnamedelima G},
+           familyi={K\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Roytberg\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           suffix={Noé\bibnamedelima L},
+           suffixi={N\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{ae92fb9cca4c45facb56c4dc34c59f87}
+      \strng{fullhash}{ae92fb9cca4c45facb56c4dc34c59f87}
+      \strng{bibnamehash}{ae92fb9cca4c45facb56c4dc34c59f87}
+      \strng{authorbibnamehash}{ae92fb9cca4c45facb56c4dc34c59f87}
+      \strng{authornamehash}{ae92fb9cca4c45facb56c4dc34c59f87}
+      \strng{authorfullhash}{ae92fb9cca4c45facb56c4dc34c59f87}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Bioinformatics and Computational Biology}
+      \field{number}{2}
+      \field{title}{A unifying framework for seed sensitivity and its application to subset seeds}
+      \field{volume}{4}
+      \field{year}{2006}
+      \field{pages}{553\bibrangedash 69}
+      \range{pages}{17}
+    \endentry
+    \entry{Petrucci2020ISSH}{article}{}
+      \name{author}{4}{}{%
+        {{hash=fe4e5fcdb271d4b1c342c8bc2f1e8c43}{%
+           family={Petrucci},
+           familyi={P\bibinitperiod},
+           given={Enrico},
+           giveni={E\bibinitperiod}}}%
+        {{hash=7b3003bbff11aa16be5882c8471e9516}{%
+           family={No{é}},
+           familyi={N\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=76574c826d106a74754f3ac4e545d1a1}{%
+           family={Pizzi},
+           familyi={P\bibinitperiod},
+           given={Cinzia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1ac67787639a4fd081b1c523200ead42}{%
+           family={Comin},
+           familyi={C\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{8e120f4f20748b2a1f2bc2f354d46c33}
+      \strng{fullhash}{8da8fa4e826b214aea3e170a4ae531bc}
+      \strng{bibnamehash}{8e120f4f20748b2a1f2bc2f354d46c33}
+      \strng{authorbibnamehash}{8e120f4f20748b2a1f2bc2f354d46c33}
+      \strng{authornamehash}{8e120f4f20748b2a1f2bc2f354d46c33}
+      \strng{authorfullhash}{8da8fa4e826b214aea3e170a4ae531bc}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Bioinformatics and Computational Biology}
+      \field{number}{2}
+      \field{title}{Iterative Spaced Seed Hashing: Closing the Gap Between Spaced Seed Hashing and k-mer Hashing}
+      \field{volume}{27}
+      \field{year}{2019}
+      \field{pages}{208\bibrangedash 219}
+      \range{pages}{12}
+    \endentry
+    \entry{Keich2004Spacedseeds}{article}{}
+      \name{author}{4}{}{%
+        {{hash=b6f702f0d52280457ab82b6ecc31c233}{%
+           family={Keich},
+           familyi={K\bibinitperiod},
+           given={Uri},
+           giveni={U\bibinitperiod}}}%
+        {{hash=dbe83fd8da75338203d4e8dd0e20be17}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fd154e017fda1bfe38019313cb5f07f1}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=111e5b8cd5b7bd6ab0ec4055ff963da9}{%
+           family={Tromp},
+           familyi={T\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Science Publishers B. V.}%
+      }
+      \strng{namehash}{e29210c8f81eb138475a6721e55fe0d9}
+      \strng{fullhash}{2d14ce96690c4f25a6fe4d6d2c198a75}
+      \strng{bibnamehash}{e29210c8f81eb138475a6721e55fe0d9}
+      \strng{authorbibnamehash}{e29210c8f81eb138475a6721e55fe0d9}
+      \strng{authornamehash}{e29210c8f81eb138475a6721e55fe0d9}
+      \strng{authorfullhash}{2d14ce96690c4f25a6fe4d6d2c198a75}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Discrete Appl. Math.}
+      \field{number}{3}
+      \field{title}{On Spaced Seeds for Similarity Search}
+      \field{volume}{138}
+      \field{year}{2004}
+      \field{pages}{253\bibrangedash 263}
+      \range{pages}{11}
+    \endentry
+    \entry{MA2007complexitySpaced}{article}{}
+      \name{author}{2}{}{%
+        {{hash=fd154e017fda1bfe38019313cb5f07f1}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=dbe83fd8da75338203d4e8dd0e20be17}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ScienceDirect}%
+      }
+      \strng{namehash}{d4eb89e6579f6ae1754c8a72cb5ee5e8}
+      \strng{fullhash}{d4eb89e6579f6ae1754c8a72cb5ee5e8}
+      \strng{bibnamehash}{d4eb89e6579f6ae1754c8a72cb5ee5e8}
+      \strng{authorbibnamehash}{d4eb89e6579f6ae1754c8a72cb5ee5e8}
+      \strng{authornamehash}{d4eb89e6579f6ae1754c8a72cb5ee5e8}
+      \strng{authorfullhash}{d4eb89e6579f6ae1754c8a72cb5ee5e8}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computer and System Sciences}
+      \field{number}{7}
+      \field{title}{On the complexity of the spaced seeds}
+      \field{volume}{73}
+      \field{year}{2007}
+      \field{pages}{1024\bibrangedash 1034}
+      \range{pages}{11}
+    \endentry
+    \entry{Choi2004recurrent}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4248b582c48f7dae19313be6fd0c9339}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={Kwok\bibnamedelima Pui},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=72081a679e5a574ed90e4c7929ded8c3}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Louxin},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {DBLP}%
+      }
+      \strng{namehash}{00daf2afaf9c226aa8bff2bc0efc64e2}
+      \strng{fullhash}{00daf2afaf9c226aa8bff2bc0efc64e2}
+      \strng{bibnamehash}{00daf2afaf9c226aa8bff2bc0efc64e2}
+      \strng{authorbibnamehash}{00daf2afaf9c226aa8bff2bc0efc64e2}
+      \strng{authornamehash}{00daf2afaf9c226aa8bff2bc0efc64e2}
+      \strng{authorfullhash}{00daf2afaf9c226aa8bff2bc0efc64e2}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computer and System Sciences}
+      \field{title}{Sensitivity analysis and efficient method for identifying optimal spaced seeds}
+      \field{volume}{68}
+      \field{year}{2004}
+      \field{pages}{22\bibrangedash 40}
+      \range{pages}{19}
+    \endentry
+    \entry{Ilie2007SpacedSeed}{article}{}
+      \name{author}{2}{}{%
+        {{hash=99dda30aa5893393af447f112a05e11e}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Lucian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dd664366c96f50bde9a221efce94d6f4}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Silvana},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Academic}%
+      }
+      \strng{namehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{fullhash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{bibnamehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{authorbibnamehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{authornamehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{authorfullhash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bioinformatics}
+      \field{number}{22}
+      \field{title}{Multiple spaced seeds for homology search}
+      \field{volume}{23}
+      \field{year}{2007}
+      \field{pages}{2969\bibrangedash 2977}
+      \range{pages}{9}
+    \endentry
+    \entry{Ilie2007Long}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=99dda30aa5893393af447f112a05e11e}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Lucian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=dd664366c96f50bde9a221efce94d6f4}{%
+           family={Ilie},
+           familyi={I\bibinitperiod},
+           given={Silvana},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {DBLP}%
+      }
+      \strng{namehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{fullhash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{bibnamehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{authorbibnamehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{authornamehash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \strng{authorfullhash}{85b3ad98e5f419eea2fae13ee3409d65}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Long spaced seeds for finding similarities between biological sequences}
+      \field{year}{2007}
+      \field{pages}{3\bibrangedash 8}
+      \range{pages}{6}
+    \endentry
+    \entry{Reu2015Sequencing}{article}{}
+      \name{author}{1}{}{%
+        {{hash=75dc516a73911ebc1096212c2201eba1}{%
+           family={Reuter\bibnamedelima JA},
+           familyi={R\bibinitperiod\bibinitdelim J\bibinitperiod},
+           given={Snyder\bibnamedelima MP},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod},
+           suffix={Spacek\bibnamedelima DV},
+           suffixi={S\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ScienceDirect}%
+      }
+      \strng{namehash}{75dc516a73911ebc1096212c2201eba1}
+      \strng{fullhash}{75dc516a73911ebc1096212c2201eba1}
+      \strng{bibnamehash}{75dc516a73911ebc1096212c2201eba1}
+      \strng{authorbibnamehash}{75dc516a73911ebc1096212c2201eba1}
+      \strng{authornamehash}{75dc516a73911ebc1096212c2201eba1}
+      \strng{authorfullhash}{75dc516a73911ebc1096212c2201eba1}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mol Cell}
+      \field{number}{4}
+      \field{title}{High-throughput sequencing technologies}
+      \field{volume}{58}
+      \field{year}{2015}
+      \field{pages}{586\bibrangedash 597}
+      \range{pages}{12}
+    \endentry
+    \entry{Man2018benchmark}{article}{}
+      \name{author}{2}{}{%
+        {{hash=244ba1b82f88e8bcd9ff8c90e98ee034}{%
+           family={Manekar},
+           familyi={M\bibinitperiod},
+           given={Swati\bibnamedelima C},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=2011c5c8dea8a9d3837bde91b457be8c}{%
+           family={Sathe},
+           familyi={S\bibinitperiod},
+           given={Shailesh\bibnamedelima R},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Academic}%
+      }
+      \strng{namehash}{eae5628b89bb44d19e9a9a81794cee91}
+      \strng{fullhash}{eae5628b89bb44d19e9a9a81794cee91}
+      \strng{bibnamehash}{eae5628b89bb44d19e9a9a81794cee91}
+      \strng{authorbibnamehash}{eae5628b89bb44d19e9a9a81794cee91}
+      \strng{authornamehash}{eae5628b89bb44d19e9a9a81794cee91}
+      \strng{authorfullhash}{eae5628b89bb44d19e9a9a81794cee91}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{GigaScience}
+      \field{number}{12}
+      \field{title}{A benchmark study of k-mer counting methods for high-throughput sequencing}
+      \field{volume}{7}
+      \field{year}{2018}
+    \endentry
+    \entry{Mar2011Jellyfish}{article}{}
+      \name{author}{2}{}{%
+        {{hash=666aac412967969383596ebe42625934}{%
+           family={Marçais},
+           familyi={M\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=597269818def1983b92e61a15057ccbe}{%
+           family={Kingsford},
+           familyi={K\bibinitperiod},
+           given={Carl},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Academic}%
+      }
+      \strng{namehash}{dd01ffabf0d495bd6bada4f3ffc3fa0b}
+      \strng{fullhash}{dd01ffabf0d495bd6bada4f3ffc3fa0b}
+      \strng{bibnamehash}{dd01ffabf0d495bd6bada4f3ffc3fa0b}
+      \strng{authorbibnamehash}{dd01ffabf0d495bd6bada4f3ffc3fa0b}
+      \strng{authornamehash}{dd01ffabf0d495bd6bada4f3ffc3fa0b}
+      \strng{authorfullhash}{dd01ffabf0d495bd6bada4f3ffc3fa0b}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Bioinformatics}
+      \field{number}{6}
+      \field{title}{A fast, lock-free approach for efficient parallel counting of occurrences of k-mers}
+      \field{volume}{27}
+      \field{year}{2011}
+      \field{pages}{764\bibrangedash 770}
+      \range{pages}{7}
+    \endentry
+    \entry{Peter2019Metrics}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ad74ef3d1d60cf3c1c5cb44a8afd7b98}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Peter\bibnamedelima Krusche},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {springer}%
+      }
+      \strng{namehash}{ad74ef3d1d60cf3c1c5cb44a8afd7b98}
+      \strng{fullhash}{ad74ef3d1d60cf3c1c5cb44a8afd7b98}
+      \strng{bibnamehash}{ad74ef3d1d60cf3c1c5cb44a8afd7b98}
+      \strng{authorbibnamehash}{ad74ef3d1d60cf3c1c5cb44a8afd7b98}
+      \strng{authornamehash}{ad74ef3d1d60cf3c1c5cb44a8afd7b98}
+      \strng{authorfullhash}{ad74ef3d1d60cf3c1c5cb44a8afd7b98}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature biotechnology}
+      \field{number}{37}
+      \field{title}{Best practices for benchmarking germline small-variant calls in human genomes}
+      \field{year}{2019}
+      \field{pages}{555\bibrangedash 560}
+      \range{pages}{6}
+    \endentry
+    \entry{Li2003linkage}{article}{}
+      \name{author}{1}{}{%
+        {{hash=178d15cdf66366861728a213a5df42de}{%
+           family={Li\bibnamedelima N},
+           familyi={L\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={Stephens\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford Academic}%
+      }
+      \strng{namehash}{178d15cdf66366861728a213a5df42de}
+      \strng{fullhash}{178d15cdf66366861728a213a5df42de}
+      \strng{bibnamehash}{178d15cdf66366861728a213a5df42de}
+      \strng{authorbibnamehash}{178d15cdf66366861728a213a5df42de}
+      \strng{authornamehash}{178d15cdf66366861728a213a5df42de}
+      \strng{authorfullhash}{178d15cdf66366861728a213a5df42de}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Genetics}
+      \field{number}{4}
+      \field{title}{Modeling linkage disequilibrium and identifying recombination hotspots using single-nucleotide polymorphism data}
+      \field{volume}{165}
+      \field{year}{2003}
+      \field{pages}{2213\bibrangedash 33}
+      \range{pages}{21}
+    \endentry
+    \entry{Girotto2018FSH}{article}{}
+      \name{author}{1}{}{%
+        {{hash=c03bb5b98672bbe31652c86ccd4f1015}{%
+           family={al.},
+           familyi={a\bibinitperiod},
+           given={Samuele\bibnamedelima Girotto},
+           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod},
+           prefix={et},
+           prefixi={e\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BMC}%
+      }
+      \strng{namehash}{c03bb5b98672bbe31652c86ccd4f1015}
+      \strng{fullhash}{c03bb5b98672bbe31652c86ccd4f1015}
+      \strng{bibnamehash}{c03bb5b98672bbe31652c86ccd4f1015}
+      \strng{authorbibnamehash}{c03bb5b98672bbe31652c86ccd4f1015}
+      \strng{authornamehash}{c03bb5b98672bbe31652c86ccd4f1015}
+      \strng{authorfullhash}{c03bb5b98672bbe31652c86ccd4f1015}
+      \field{extraname}{3}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Algorithms Mol Biol}
+      \field{number}{8}
+      \field{title}{FSH: fast spaced seed hashing exploiting adjacent hashes}
+      \field{volume}{13}
+      \field{year}{2018}
+    \endentry
+    \entry{Li2004PatternHunter2}{article}{}
+      \name{author}{4}{}{%
+        {{hash=dbe83fd8da75338203d4e8dd0e20be17}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+        {{hash=34e4b266c34b9cdd376c05122bbb4e31}{%
+           family={ma},
+           familyi={m\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e086896ae4110778be58f656cf7bb64b}{%
+           family={Kisman},
+           familyi={K\bibinitperiod},
+           given={Derek},
+           giveni={D\bibinitperiod}}}%
+        {{hash=111e5b8cd5b7bd6ab0ec4055ff963da9}{%
+           family={Tromp},
+           familyi={T\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ResearchGate}%
+      }
+      \strng{namehash}{b2c49bbb2e0a288bcaa887002ca1ab95}
+      \strng{fullhash}{27a11b429ca268e18eada446b019824c}
+      \strng{bibnamehash}{b2c49bbb2e0a288bcaa887002ca1ab95}
+      \strng{authorbibnamehash}{b2c49bbb2e0a288bcaa887002ca1ab95}
+      \strng{authornamehash}{b2c49bbb2e0a288bcaa887002ca1ab95}
+      \strng{authorfullhash}{27a11b429ca268e18eada446b019824c}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of bioinformatics and computational biology}
+      \field{title}{PatternHunter II: Highly Sensitive and Fast Homology Search}
+      \field{volume}{2}
+      \field{year}{2004}
+      \field{pages}{417\bibrangedash 39}
+      \range{pages}{23}
+    \endentry
+    \entry{haimo2022issue}{misc}{}
+      \list{publisher}{1}{%
+        {Github}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/eblerjana/pangenie/issues/13}}
+      \field{journaltitle}{Github}
+      \field{title}{PanGenie nondeterminstic when executed with a Jellyfish database and multiple threads}
+      \field{volume}{accessed 20-November-2022}
+      \field{year}{2022}
+    \endentry
+    \entry{Noe2017SeedSelection}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4ca97ceec4168e8f5ce5db93f737c9e1}{%
+           family={Noé},
+           familyi={N\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {BMC}%
+      }
+      \strng{namehash}{4ca97ceec4168e8f5ce5db93f737c9e1}
+      \strng{fullhash}{4ca97ceec4168e8f5ce5db93f737c9e1}
+      \strng{bibnamehash}{4ca97ceec4168e8f5ce5db93f737c9e1}
+      \strng{authorbibnamehash}{4ca97ceec4168e8f5ce5db93f737c9e1}
+      \strng{authornamehash}{4ca97ceec4168e8f5ce5db93f737c9e1}
+      \strng{authorfullhash}{4ca97ceec4168e8f5ce5db93f737c9e1}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Algorithms Mol Biol}
+      \field{number}{1}
+      \field{title}{Best hits of 11110110111: model-free selection and parameter-free sensitivity calculation of spaced seeds.}
+      \field{volume}{12}
+      \field{year}{2017}
+    \endentry
+  \enddatalist
+  \missing{1}
+\endrefsection
+\endinput
+
