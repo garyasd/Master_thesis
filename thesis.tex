@@ -40,16 +40,39 @@
 \begin{document}
 
 
-\newcommand*\Keywords英文{genotyping, palindrome spaced seeds, k-mers, alignment free}
-\newcommand*\Abstract英文{Spaced seeds have demonstrated significant improvements in sensitivity for various applications, such as homology search, metagenomic classification, and phylogenetic reconstruction. However, their application in k-mer-based genotyping methods has not been extensively studied. Hartmut Häntze, explored the use of palindrome spaced seeds in PanGenie~\cite{elber2022PanGenie}, namely MaskedPanGenie~\cite{haimo2023MaskedPanGenie}. The results showed that MaskedPanGenie, utilizing palindrome spaced seeds, achieved notable enhancements in genotyping result for both low coverage (5x) and high coverage (30x) scenarios, particularly in capturing indel genotypes. The observed increase in wGC reached up to 6.5\% under high coverage (30x).
-However, it is worth noting that the computational time required for genotyping with MaskedPanGenie was significantly higher, exceeding 3x compared to PanGenie. This contradicts the nature of alignment-free, k-mer-based genotyping methods. In this study, we optimized the MaskedPanGenie pipeline, resulting in approximately 2x faster execution time compared to the original MaskedPanGenie version. Additionally, we investigated the impact of different palindrome spaced seeds for different scenarios on the genotyping results, providing valuable insights for future research on generating optimal palindrome spaced seeds.
+% \newcommand*\Keywords英文{genotyping, palindrome spaced seeds, k-mers, alignment free}
+% \newcommand*\Abstract英文{Spaced seeds have demonstrated significant improvements in sensitivity for various applications, such as homology search, metagenomic classification, and phylogenetic reconstruction. However, their application in k-mer-based genotyping methods has not been extensively studied. Hartmut Häntze, explored the use of palindrome spaced seeds in PanGenie~\cite{elber2022PanGenie}, namely MaskedPanGenie~\cite{haimo2023MaskedPanGenie}. The results showed that MaskedPanGenie, utilizing palindrome spaced seeds, achieved notable enhancements in genotyping result for both low coverage (5x) and high coverage (30x) scenarios, particularly in capturing indel genotypes. The observed increase in wGC reached up to 6.5\% under high coverage (30x).
+% However, it is worth noting that the computational time required for genotyping with MaskedPanGenie was significantly higher, exceeding 3x compared to PanGenie. This contradicts the nature of alignment-free, k-mer-based genotyping methods. In this study, we optimized the MaskedPanGenie pipeline, resulting in approximately 2x faster execution time compared to the original MaskedPanGenie version. Additionally, we investigated the impact of different palindrome spaced seeds for different scenarios on the genotyping results, providing valuable insights for future research on generating optimal palindrome spaced seeds.
+% }
+\newcommand*\Keywords英文{genotyping, palindrome spaced seeds, k-mer counting, sensitivity}
+\newcommand*\Abstract英文{
+%Background
+Pangenomic approaches are increasingly important for genotyping, inspiring the development of tools such as PanGenie~\cite{elber2022PanGenie}. Recently Häntze \& Horton published MaskedPanGenie~\cite{haimo2023MaskedPanGenie}, which extends the PanGenie approach to support using spaced seeds.  Their results showed enhancements in genotyping performance for both low (5x) and high (30x) read coverage, particularly in capturing indel genotypes.  Promisingly, the observed increase in whole genome concordance reached up to 6.5\% under high coverage (30x).  However their study also had its limitations.  In particular their implementation of MaskedPanGenie is much slower than PanGenie and they tried only a small number of seeds and did not provide a systematic method to generate seeds optimized to the genotyping task.  The work in this report addresses those limitations.
+
+%Method
+First, for the speed-up aspect, we propose MaskedJellyfish to enable spaced seed k-mer counting in the MaskedPanGenie pipeline. By incorporating the MaskedJellyfish library for spaced k-mer counting, we eliminate the need for additional preprocessing time in spaced k-mer counting and simplify the MaskedPanGenie pipeline.
+
+Secondly, for seed generation, we propose PalindromeSpEED to generate better palindrome spaced seeds by iteratively optimizing a random seed through flipping and evaluating sensitivity.
+
+%Result
+We have two main results.  The first is a very significant (\textasciitilde2X-3X) speed-up over the original MaskedPanGenie workflow.  The second is the development of a method for optimizing spaced seeds for this task and showing that it leads to a modest improvement in performance.
 }
 
 
-\newcommand*\Keywords中文{基因分析、回文空格種子、k-mers、alignment free}
+
+% \newcommand*\Keywords中文{基因分析、回文空格種子、k-mers、alignment free}
+% \newcommand*\Abstract中文{
+% 空格種子(spaced seeds)在各種應用中展示出顯著的靈敏度改善，例如同源性搜索、宏基因組分類和系統發育重建。然而，在基於k-mer的基因分型方法中，對於空格種子的應用尚未得到廣泛研究。因此，作者Hartmut Häntze在PanGenie~\cite{elber2022PanGenie}中增加空格種子的應用並命名為MaskedPanGenie~\cite{haimo2023MaskedPanGenie}。結果顯示，MaskedPanGenie利用空格種子在低覆蓋率（5倍）和高覆蓋率（30倍）情境下均顯著提升了基因分型的結果，特別是在捕捉插入/刪除(indel)方面的表現，在高覆蓋率（30倍）下觀察到的wGC增加可達到6.5\%。
+% 然而，值得注意的是，相對於PanGenie，使用MaskedPanGenie進行基因分型所需的計算時間明顯增加至少3倍以上。這與基於k-mer的無比對、基因分型方法的本質上是背道而馳的。在本研究中，我們優化了MaskedPanGenie流程的時間效率，使其執行時間相對於原始版本加快了約2倍。此外，我們還研究了不同狀況間的空格種子對基因分型結果的影響，為後續最佳回文空格種子的研究提供了有價值的見解。
+% }
+\newcommand*\Keywords中文{基因分型、回文間隔種子、k-mer 計數、敏感度}
 \newcommand*\Abstract中文{
-空格種子(spaced seeds)在各種應用中展示出顯著的靈敏度改善，例如同源性搜索、宏基因組分類和系統發育重建。然而，在基於k-mer的基因分型方法中，對於空格種子的應用尚未得到廣泛研究。因此，作者Hartmut Häntze在PanGenie~\cite{elber2022PanGenie}中增加空格種子的應用並命名為MaskedPanGenie~\cite{haimo2023MaskedPanGenie}。結果顯示，MaskedPanGenie利用空格種子在低覆蓋率（5倍）和高覆蓋率（30倍）情境下均顯著提升了基因分型的結果，特別是在捕捉插入/刪除(indel)方面的表現，在高覆蓋率（30倍）下觀察到的wGC增加可達到6.5\%。
-然而，值得注意的是，相對於PanGenie，使用MaskedPanGenie進行基因分型所需的計算時間明顯增加至少3倍以上。這與基於k-mer的無比對、基因分型方法的本質上是背道而馳的。在本研究中，我們優化了MaskedPanGenie流程的時間效率，使其執行時間相對於原始版本加快了約2倍。此外，我們還研究了不同狀況間的空格種子對基因分型結果的影響，為後續最佳回文空格種子的研究提供了有價值的見解。
+全基因組學方法在基因分型中變得越來越重要，啟發了一些工具的開發，如PanGenie~\cite{elber2022PanGenie}。最近Häntze和Horton發表了MaskedPanGenie~\cite{haimo2023MaskedPanGenie}，它擴展了PanGenie方法以支援使用間隔種子(spaced seeds)。他們的結果顯示，在低（5倍）和高（30倍）讀取覆蓋率下，特別是捕獲插入/缺失(genotype)方面，基因分型性能有所提升。令人鼓舞的是，在高覆蓋率（30倍）下觀察到的全基因組一致性提高了最多6.5\%。然而，他們的研究也存在一些限制。特別是，他們的MaskedPanGenie執行時間相對於PanGenie慢得多，另外他們只嘗試了少數種子，並沒有提供一種系統方法來生成針對基因分型任務進行優化的種子。本研究解決了這些限制。
+
+首先，在加速方面，我們提出了MaskedJellyfish，用於在MaskedPanGenie流程中實現間隔種子k-mer計數。通過整合MaskedJellyfish庫進行間隔k-mer計數，我們消除了間隔k-mer計數中額外的預處理時間，同時簡化了MaskedPanGenie流程。
+其次，在種子生成方面，我們提出了PalindromeSpEED，為了能生成更好的回文間隔種子，通過不斷優化隨機種子和敏感性評估。
+
+我們有兩個主要的結果。第一個結果是相對於原始的MaskedPanGenie工作流程，實現了非常顯著的（約2倍-3倍）加速。第二個結果是開發了一種針對這項任務進行優化的空隔種子方法，並展示了在性能上的適度改進。
 }
 
 \newcommand*\Acknowledgements{%
@@ -87,7 +110,7 @@ However, it is worth noting that the computational time required for genotyping 
 
 
 \chapter{Introduction}
-Spaced seeds have revolutionized sequence analysis and alignment algorithms in bioinformatics. Traditional methods rely on contiguous subsequences, known as contiguous seeds, for similarity search and alignment. A prominent example is Blast~\cite{ALTSCHUL1990Blast}, which adopts the "hit and extend" approach. In this method, a hit is defined as an exact match of 11 consecutive nucleotides between two sequences, and these matches serve as potential candidates for extension and local alignment. However, it is evident that not all local alignments exhibit an identical stretch of length 11. This limitation highlights the constrained nature of contiguous seeds in handling sequence variations.
+Spaced seeds have been shown to improve the performance of many sequence analysis and alignment algorithms in bioinformatics. Traditional methods rely on contiguous subsequences, known as contiguous seeds, for similarity search and alignment. A prominent example is Blast~\cite{ALTSCHUL1990Blast}, which adopts the "hit and extend" approach. In this method, a hit is defined as an exact match of 11 consecutive nucleotides between two sequences, and these matches serve as potential candidates for extension and local alignment. However, it is evident that not all local alignments exhibit an identical stretch of length 11. This limitation highlights the constrained nature of contiguous seeds in handling sequence variations.
 
 Spaced seeds address this limitation by allowing for "don't care" positions within the seed. These positions can match any nucleotide or tolerate variations, thus providing flexibility in accommodating sequence variations. By incorporating spaced seeds into alignment algorithms, researchers can improve sensitivity and specificity, especially in cases where the sequences being compared contain variations or have different lengths.
 
@@ -188,7 +211,7 @@ Genotype concordance, which measures the proportion of correctly genotyped varia
 \begin{center}
     conc(0|0) = $\frac{T_{0|0}}{T_{0|0} + F_{0|0}}$\hspace{0.5cm}conc(0|1) = $\frac{T_{0|1}}{T_{0|1} + F_{0|1}}$\hspace{0.5cm} conc(1|1) = $\frac{T_{1|1}}{T_{1|1} + F_{1|1}}$\\
     \vspace{1cm}
-    wGC = $\frac{\texttt{conc(0|0)} + \texttt{conc(0|1)} + \texttt{conc(1|1)}}{3}$
+    wGC = $\frac{\text{conc(0|0)} + \text{conc(0|1)} + \text{conc(1|1)}}{3}$
 \end{center}
 
 In this study, adjusted versions of these metrics are reported, considering only variants present in the given variant file (vcf). Variants that are undefined in the ground-truth set are removed from both sets to ensure consistency in the evaluation.
@@ -420,7 +443,7 @@ The dataset used for evaluation was NA12878 with 30-fold coverage. In the contex
 \item Determining unique k-mers.
 \item Constructing an HMM (Hidden Markov Model) and calculating the most likely genotypes.
 \end{enumerate}
-The results in Table \ref{table:MaskedPanGenie} demonstrate a notable reduction in runtime for the revised MaskedPanGenie compared to the original MaskedPanGenie with preprocessing step. This improvement is primarily attributed to significant time savings in the preprocessing step and HMM step, resulting in an overall speedup of over 2x compared to Hartmut's MaskedPanGenie. The primary factors contributing to this improvement are as follows:
+The results in Table \ref{table:MaskedPanGenie} demonstrate a notable reduction in runtime for the revised MaskedPanGenie compared to the original MaskedPanGenie with preprocessing step. This improvement is primarily attributed to significant time savings in the preprocessing step and HMM step, resulting in an overall speedup of over 2x compared to Häntze's MaskedPanGenie. The primary factors contributing to this improvement are as follows:
 
 Firstly, the preprocessing step, which was the main target of modification, plays a crucial role in saving time and simplifying the pipeline. Instead of performing spaced seed processing beforehand, the revised pipeline integrates it into the second step, i.e., counting k-mers in reads and the pangenome graph. Consequently, the revised MaskedPanGenie exhibits longer runtime in the counting step compared to the original version.
 
@@ -431,15 +454,15 @@ The analysis of this performance comparison provides valuable insights into the 
 	\centering
 	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccccccc@{\extracolsep{\fill}}}
         \toprule
-         & Preprocessing & Reading Input & Counting & Unique & HMM & Total\\
-         Method & & & & & &\\
+         & Pre- & Reading & Counting & Unique & HMM & Total\\
+         Method & processing & Input & & & &\\
         \midrule
         MaskedPanGenie(i)& 5h:50min & 11min & 2min & 65min & 94min& 8h:42min \\
         MaskedPanGenie(ii)& 2h:30min & 11min & 2min & 65min & 94min & 5h:28min\\
         MaskedPanGenie(iii)& - & 11min & 1h:4min & 4min & 94min & \textbf{2h:53min}\\
         \bottomrule 
 	\end{tabular*}
-    \caption{The runtime comparison for genotyping NA12878 with 30-fold coverage between Hartmut's MaskedPanGenie(i), MaskedJellyfish+MaskedPanGenie (ii), and the Revised\_MaskedPanGenie (iii).}
+    \caption{The runtime comparison for genotyping NA12878 with 30-fold coverage between Häntze's MaskedPanGenie(i), MaskedJellyfish+MaskedPanGenie (ii), and the Revised\_MaskedPanGenie (iii).}
 	\label{table:MaskedPanGenie}
 \end{table}
 \subsection{Memory comparison}
@@ -460,7 +483,7 @@ However, in the revised MaskedPanGenie, there is no need to process the data sep
         MaskedPanGenie(ii)& 80.0799GB & 80.2827GB & 80.2818GB & 79.6233GB\\
         \bottomrule 
 	\end{tabular*}
-	\caption{Comparison of memory usage between the Hartmut's MaskedPanGenie(i) and the revised MaskedPanGenie(ii) from four samples.}
+	\caption{Comparison of memory usage between the Häntze's MaskedPanGenie(i) and the revised MaskedPanGenie(ii) from four samples.}
 	\label{table:Space_MaskedPanGenie}
 \end{table}
 
@@ -473,11 +496,11 @@ The impact of spaced seed patterns on genotyping is analyzed in this study using
 \end{enumerate}
 By analyzing these scenarios, users can make informed decisions when choosing suitable spaced seed patterns in MaskedPanGenie for their genotyping needs.
 \subsection{Sensitivity}
-In this section, we aimed to investigate the impact of sensitivity values on the final genotyping results using different spaced seed patterns. Specifically, we set the spaced seed pattern (Table \ref{table:Sensitivity}) with a length of 51 and weight of 31, along with two additional contiguous seed patterns with lengths of 31(seed0) and 51(seed6). Among the spaced seed patterns, seed2 corresponds to the spaced seed used by the original author, while the other spaced seed patterns were generated using the PalindromeSpEED software and seed5 is the best palindrome spaced seed.
+In this section, we aimed to investigate the impact of sensitivity values on the final genotyping results using different spaced seed patterns. Specifically, we set the spaced seed pattern (Table \ref{table:Sensitivity}) with a length of 51 and weight of 31, along with two additional contiguous seed patterns with lengths of 31 (seed0) and 51 (seed6). Among the spaced seed patterns, seed2 corresponds to the spaced seed used by the original author, while the other spaced seed patterns were generated using the PalindromeSpEED software and seed5 is the best palindrome spaced seed.
 
 In this study, we not only aimed to validate the superiority of spaced seed patterns over contiguous seed patterns in achieving better genotyping results but also examined the effect of higher sensitivity values in the spaced seed patterns on the overall performance. Our findings indicate that spaced seed patterns, particularly those with higher sensitivity values, tend to yield improved genotyping results compared to contiguous seed patterns.
 
-Table \ref{table:sensitivity-5x} and Table \ref{table:sensitivity-30x} present the genotyping results at 5-fold and 30-fold coverage, respectively. Figure \ref{fig:sensitivity_genotyping} illustrates the results of genotyping different variant types at various coverage levels for each seed. Based on the information provided, it can be observed that the spaced seed approach generally outperforms the contiguous seed approach. Moreover, spaced seeds with higher sensitivity (e.g., seed3, seed4, and seed5) tend to yield better genotyping results compared to seeds with lower sensitivity (e.g., seed1 and seed2).
+Table \ref{table:sensitivity-5x} and Table \ref{table:sensitivity-30x} present the genotyping results at 5-fold and 30-fold coverage, respectively. Figure \ref{fig:sensitivity_genotyping_5x} and Figure \ref{fig:sensitivity_genotyping_30x} illustrates the results of genotyping different variant types at various coverage levels for each seed. Based on the information provided, it can be observed that the spaced seed approach generally outperforms the contiguous seed approach. Moreover, spaced seeds with higher sensitivity (e.g., seed3, seed4, and seed5) tend to yield better genotyping results compared to seeds with lower sensitivity (e.g., seed1 and seed2).
 
 \begin{table}[ht!]
     % \setlength{\abovecaptionskip}{0cm}
@@ -506,9 +529,9 @@ Table \ref{table:sensitivity-5x} and Table \ref{table:sensitivity-30x} present t
     \label{table:Sensitivity}
 \end{table}
 \subsection{Care position}
-In this section, we compare the impact of different weighted spaced seed patterns on genotyping results at the same length. Table \ref{table:Care position} is set with a length of 51, where the weights of the seeds are as follows: seed0(weight=21), seed1(weight=31), seed2(weight=41), seed3(weight=51). It is important to note that the sensitivity of seed0 cannot be calculated. This is due to the fact that calculating sensitivity requires more time and additional memory resources for computation. However, due to limited memory resources, the generation of seed0 is based on the spaced seed generated by the PalindromeSpEED tool with the best overlap complexity.
+In this section, we compare the impact of different weighted spaced seed patterns on genotyping results at the same length. Table \ref{table:Care position} is set with a length of 51, where the weights of the seeds are as follows: seed0 (weight=21), seed1 (weight=31), seed2 (weight=41), seed3 (weight=51). It is important to note that the sensitivity of seed0 cannot be calculated. This is due to the fact that calculating sensitivity requires more time and additional memory resources for computation. However, due to limited memory resources, the generation of seed0 is based on the spaced seed generated by the PalindromeSpEED tool with the best overlap complexity.
 
-Table \ref{table:care-5x} and Table \ref{table:care-30x} respectively display the genotyping results for each variant type (wGC, Precision, Recall, and F-score) at 5x coverage and 30x coverage. Figure \ref{fig:care_genotyping} illustrates the precision and recall for each seed in the genotyping results across different coverage levels and variant types. The results indicate that, at 5x coverage, a lower number of care positions leads to better genotyping results. However, in the case of 30x coverage, this trend is reversed for the snv variant type. 
+Table \ref{table:care-5x} and Table \ref{table:care-30x} respectively display the genotyping results for each variant type (wGC, Precision, Recall, and F-score) at 5x coverage and 30x coverage. Figure \ref{fig:care_genotyping_5x} and Figure \ref{fig:care_genotyping_30x} illustrates the precision and recall for each seed in the genotyping results across different coverage levels and variant types. The results indicate that, at 5x coverage, a lower number of care positions leads to better genotyping results. However, in the case of 30x coverage, this trend is reversed for the snv variant type. 
 \begin{table}[ht]
     % \setlength{\abovecaptionskip}{0cm}
     % \setlength{\belowcaptionskip}{0pt}
@@ -535,7 +558,7 @@ In this section, we evaluate the impact of varying the length of spaced k-mers o
 
 % Determining the appropriate length of k-mers is a crucial factor in various computational analyses, including genotyping. The choice between shorter and longer k-mers involves trade-offs and considerations. Shorter k-mers, typically ranging from 15 to 31 base pairs, offer advantages such as increased sensitivity and specificity in sequence matching. They can effectively capture local similarities and variations within a genome or sequence dataset. Short k-mers are particularly useful for identifying short sequence motifs, detecting small variations, and distinguishing closely related sequences. On the other hand, longer k-mers, typically exceeding 31 base pairs, provide a broader context and capture more global patterns within a sequence. They offer higher sequence specificity and can better handle repetitive regions and larger genomic variations. Longer k-mers are beneficial when analyzing complex genomes, identifying large structural variations, or distinguishing distantly related sequences.
 
-The genotyping results from Table \ref{table:len-5x}, Table \ref{table:len-30x}, and Fig \ref{fig:len_genotyping} consistently demonstrate that longer k-mer lengths yield better overall genotyping performance. However, an interesting observation is that this trend is reversed for precision, which is contrary to what was expected based on previous findings mentioned in MaskedPanGenie~\cite{haimo2023MaskedPanGenie}. The authors of MaskedPanGenie acknowledge this discrepancy but are uncertain about the underlying reasons for not observing this trend in their data.
+The genotyping results from Table \ref{table:len-5x}, Table \ref{table:len-30x}, Figure \ref{fig:len_genotyping_5x} and Figure \ref{fig:len_genotyping_30x} consistently demonstrate that longer k-mer lengths yield better overall genotyping performance. However, an interesting observation is that this trend is reversed for precision, which is contrary to what was expected based on previous findings mentioned in MaskedPanGenie~\cite{haimo2023MaskedPanGenie}. The authors of MaskedPanGenie acknowledge this discrepancy but are uncertain about the underlying reasons for not observing this trend in their data.
 \begin{table}[ht]
     % \setlength{\abovecaptionskip}{0cm}
     % \setlength{\belowcaptionskip}{0pt}
@@ -623,13 +646,19 @@ sv & seed0  & 0.682(SE=0.013)  & 0.671(SE=0.011)  & 0.616(SE=0.015)  & 0.642(SE=
 \end{tabular*}
 \caption{Genotyping results for \textbf{30-fold coverage } under \textbf{sensitivity}\label{table:sensitivity-30x}}
 \end{table*}
-\clearpage
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=0.3]{figures/Sensitivity_genotyping.png}
-	\caption{Scatter plots for precision and recall of genotyping under \textbf{sensitivity case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
-	\label{fig:sensitivity_genotyping} % \ref{this label}
+	\includegraphics[scale=0.5]{figures/Sensitivity_genotyping_5x.png}
+	\caption{Scatter plots for precision and recall of genotyping for \textbf{5-fold coverage} under \textbf{sensitivity case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
+	\label{fig:sensitivity_genotyping_5x} % \ref{this label}
 \end{figure}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.5]{figures/Sensitivity_genotping_30x.png}
+	\caption{Scatter plots for precision and recall of genotyping for \textbf{30-fold coverage} under \textbf{sensitivity case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
+	\label{fig:sensitivity_genotyping_30x} % \ref{this label}
+\end{figure}
+
 
 \begin{table*}[ht!]
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}llllll@{\extracolsep{\fill}}}
@@ -684,9 +713,15 @@ sv & seed0  & 0.733(SE=0.02)&  0.675(SE=0.013)&  0.671(SE=0.019)&  0.673(SE=0.01
 \end{table*}
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=0.3]{figures/care_genotyping.png}
-	\caption{Scatter plots for precision and recall of genotyping under \textbf{care position case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
-	\label{fig:care_genotyping} % \ref{this label}
+	\includegraphics[scale=0.5]{figures/care_genotyping_5x.png}
+	\caption{Scatter plots for precision and recall of genotyping for \textbf{5-fold coverage} under \textbf{care position case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
+	\label{fig:care_genotyping_5x} % \ref{this label}
+\end{figure}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.5]{figures/care_genotyping_30x.png}
+	\caption{Scatter plots for precision and recall of genotyping for \textbf{30-fold coverage} under \textbf{care position case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
+	\label{fig:care_genotyping_30x} % \ref{this label}
 \end{figure}
 
 \begin{table*}[ht!]
@@ -743,10 +778,17 @@ sv & seed0  & 0.682(SE=0.013)& 0.671(SE=0.011)& 0.616(SE=0.015) & 0.642(SE=0.011
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[scale=0.3]{figures/len_genotyping.png}
-	\caption{Scatter plots for precision and recall of genotyping under \textbf{length variation case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
-	\label{fig:len_genotyping} % \ref{this label}
+	\includegraphics[scale=0.5]{figures/len_genotyping_5x.png}
+	\caption{Scatter plots for precision and recall of genotyping for \textbf{5-fold coverage} under \textbf{length variation case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
+	\label{fig:len_genotyping_5x} % \ref{this label}
 \end{figure}
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[scale=0.5]{figures/len_genotyping_30x.png}
+	\caption{Scatter plots for precision and recall of genotyping for \textbf{30-fold coverage} under \textbf{length variation case}. The results are calculated for each sample with each seed, and each sample is denoted by a unique symbol on the plots.}
+	\label{fig:len_genotyping_30x} % \ref{this label}
+\end{figure}
+
 \chapter{Discussion \& Future Works}
 MaskedPanGenie is an alignment-free genotyping tool that utilizes spaced k-mers. However, its main drawback is the high runtime, which means that obtaining relatively better genotyping results comes at a significant time cost. In our study, generating results for a single spaced seed in nine samples alone took nearly a week. In contrast, the new version of MaskedPanGenie is capable of producing genotyping results for 2-3 spaced seeds in the same timeframe(Table \ref{table:RuntimeSpaced}). Nevertheless, there is still room for optimization in terms of runtime.
 
@@ -763,7 +805,7 @@ MaskedPanGenie is an alignment-free genotyping tool that utilizes spaced k-mers.
         MaskedPanGenie(ii)& 30x & 3h:47min & 1d:3h:47min\\
         \bottomrule 
 	\end{tabular*}
-	\caption{The average time and total time required to generate a single spaced seed in nine samples across different coverage compared between Hartmut's MaskedPanGenie(i) and the revised MaskedPanGenie(ii).}
+	\caption{The average time and total time required to generate a single spaced seed in nine samples across different coverage compared between Häntze's MaskedPanGenie(i) and the revised MaskedPanGenie(ii).}
 	\label{table:RuntimeSpaced}
 \end{table}
 
