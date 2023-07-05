@@ -76,7 +76,7 @@ We have two main results.  The first is a very significant (\textasciitilde2X-3X
 }
 
 \newcommand*\Acknowledgements{%
-
+待補充.....
 }
 
 \input{frontmatter}% 封面頁, 口委中英文簽名單, 誌謝, 中英文摘要, 論文目錄, 圖表目錄
@@ -116,19 +116,19 @@ Spaced seeds address this limitation by allowing for "don't care" positions with
 
 The concept of spaced seeds was initially introduced by Ma et al. and was subsequently implemented in the PatternHunter~\cite{MaB2002PatternHunter} software. Spaced seeds have demonstrated their effectiveness in enhancing sensitivity for homology search and was sucessfully applied in various bioinformatics tasks, including metagenome sequence clustering, protein classification, read mapping, phylogeny reconstruction. They have demonstrated their effectiveness in improving alignment accuracy, reducing computational time, and enabling the analysis of large-scale genomic datasets.
 
-Several software tools have been developed to generate approximate optimal spaced seeds, including SpEED~\cite{Lucian2011SpEED}, RasBhari~\cite{Hahn2016Rasbhari}, and Iedera~\cite{Kucherov2006Sensitivity}. These tools aim to optimize seed parameters, such as seed length, seed weight, and seed spacing, to maximize the sensitivity and specificity of seed-based algorithms. They employ different methods and algorithms to achieve seed optimization, resulting in improved performance and results for various genomic analysis tasks. Utilizing these tools can assist researchers in selecting the most suitable seed parameters for specific applications and datasets, thereby enhancing the accuracy and efficiency of alignment-free, k-mer-based algorithms in sequence analysis.
+Several software tools have been developed to generate highly sensitive spaced seeds, including SpEED~\cite{Lucian2011SpEED}, RasBhari~\cite{Hahn2016Rasbhari}, and Iedera~\cite{Kucherov2006Sensitivity}. These tools aim to optimize seed parameters, such as seed length, seed weight, and seed spacing, to maximize the sensitivity and specificity of seed-based algorithms. They employ different methods and algorithms to achieve seed optimization, resulting in improved performance and results for various genomic analysis tasks. Utilizing these tools can assist researchers in selecting the most suitable seed parameters for specific applications and datasets, thereby enhancing the accuracy and efficiency of alignment-free, k-mer-based algorithms in sequence analysis.
 
-MaskedPanGenie incorporates approximate optimal spaced seeds to enhance the alignment-free k-mer-based genotyper, PanGenie.This integration of spaced seeds improves the recall, F-score, and weighted genotype concordance (wGC) of PanGenie when genotyping SNPs, indels, and structural variations (SV) in reads with low (5x) and high (30x) coverage. Notably, significant improvements are observed in the genotyping accuracy of indels, with wGC increasing by up to 6.5\% at 30-fold coverage. These results highlight the efficacy of utilizing spaced seeds over simply increasing the length of contiguous k-mers in PanGenie, ultimately enhancing its performance in variant genotyping across different coverage scenarios.
+MaskedPanGenie incorporates highly sensitive spaced seeds to enhance the alignment-free k-mer-based genotyper, PanGenie.This integration of spaced seeds improves the recall, F-score, and weighted genotype concordance (wGC) of PanGenie when genotyping SNPs, indels, and structural variations (SV) in reads with low (5x) and high (30x) coverage. Notably, significant improvements are observed in the genotyping accuracy of indels, with wGC increasing by up to 6.5\% at 30-fold coverage. These results highlight the efficacy of utilizing spaced seeds over simply increasing the length of contiguous k-mers in PanGenie, ultimately enhancing its performance in variant genotyping across different coverage scenarios.
 
 However, MaskedPanGenie suffers from certain concerns.
 \begin{enumerate}[label=(\roman*)]
     \item High runtime: Compared to the original PanGenie's contiguous k-mer approach, MaskedPanGenie's runtime becomes significantly longer. This discrepancy worsens with parallelization on multicore systems. This prolonged runtime poses inconveniences to users and raises questions about the acceptability of the time cost, especially considering PanGenie's primary purpose of accelerating genotyping with an alignment-free k-mer-based method compared to reference mapping approaches.
-    \item Selection of spaced seeds:The choice of spaced seeds plays a crucial role in genotyping result, as evidenced by various studies. Due to software limitations, the author employs SpEED~\cite{Lucian2011SpEED} to generate shorter approximate optimal spaced seeds and then extends them with their mirrored version on the right side to ensure palindromicity. While this approach yields palindrome spaced seeds, it does not guarantee approximately optimal palindrome spaced seeds. Hence, our research also investigates which spaced seed patterns yield better genotyping results. Additionally, we validate the impact of spaced seeds on the genotyping outcomes.
+    \item Selection of spaced seeds:The choice of spaced seeds plays a crucial role in genotyping result, as evidenced by various studies. Due to software limitations, the author employs SpEED~\cite{Lucian2011SpEED} to generate shorter highly sensitive spaced seeds and then extends them with their mirrored version on the right side to ensure palindromicity. While this approach yields palindrome spaced seeds, it does not guarantee highly sensitive palindrome spaced seeds. Hence, our research also investigates which spaced seed patterns yield better genotyping results. Additionally, we validate the impact of spaced seeds on the genotyping outcomes.
 \end{enumerate}
 Based on the aforementioned concerns, we propose two solutions and provide discussions.
 \begin{enumerate}[label=(\roman*)]
     \item Addressing the issue of high runtime: We will optimize the MaskedPanGenie pipeline to significantly reduce the additional data processing and computational time, thereby mitigating the impact of time costs. This optimization aims to alleviate the inconvenience caused to users and ensure a more efficient genotyping process.
-    \item Enhancing the selection of spaced seeds: Building upon the SpEED algorithm, we will develop an modified approach capable of generating approximate optimal palindrome spaced seeds. This revised method ensures a more reasonable selection process for spaced seeds, in contrast to the current practice of obtaining palindrome spaced seeds. Additionally, in the results chapter, we will examine the genotyping outcomes under different scenarios using spaced seeds, including those derived from the author's original approach.
+    \item Enhancing the selection of spaced seeds: Building upon the SpEED algorithm, we will develop an modified approach capable of generating highly sensitive palindrome spaced seeds. This revised method ensures a more reasonable selection process for spaced seeds, in contrast to the current practice of obtaining palindrome spaced seeds. Additionally, in the results chapter, we will examine the genotyping outcomes under different scenarios using spaced seeds, including those derived from the author's original approach.
 \end{enumerate}
 
 
@@ -182,17 +182,17 @@ According to this study, the overlap complexity~\cite{Ilie2007Long} of a seed $s
 
 Example2.2:\\
 Consider the spaced seed $S$ = 10101. The computation of overlap complexity for this spaced seed is performed as follows:\\  
-\begin{tabular}{ccccccccccccc}
-  &   &   &   &   &   &   &   &   &   &   & shift i & $\sigma[i]$ \\
-1 & 0 & 1 & 0 & 1 & * & * & * & * & * & * &         &            \\
-* & 1 & 0 & 1 & 0 & 1 & * & * & * & * & * &   1     &     0      \\
-* & * & 1 & 0 & 1 & 0 & 1 & * & * & * & * &   2     &     2       \\
-* & * & * & 1 & 0 & 1 & 0 & 1 & * & * & * &   3     &     0        \\
-* & * & * & * & 1 & 0 & 1 & 0 & 1 & * & * &   4     &     1        \\
+\begin{tabular}{ccccccccccc}
+  &   &   &   &   &   &   &   &   & shift i & $\sigma[i]$ \\
+1 & 0 & 1 & 0 & 1 & * & * & * & *  &         &            \\
+* & 1 & 0 & 1 & 0 & 1 & * & * & *  &   1     &     0      \\
+* & * & 1 & 0 & 1 & 0 & 1 & * & *  &   2     &     2       \\
+* & * & * & 1 & 0 & 1 & 0 & 1 & *  &   3     &     0        \\
+* & * & * & * & 1 & 0 & 1 & 0 & 1  &   4     &     1        \\
 \end{tabular}\\\\\\
 We can get OC($S$) = $\sum\limits_{i = 1}^{l = 4}2^{\sigma[i]}$ = 0 + 2 + 0 + 1 = 3. Overlap complexity provides a reliable estimation of sensitivity and can be computed efficiently in low polynomial time. 
 \subsubsection{SpEED}
-The Ilie and Ilie (2007) algorithm relies on user-defined seed lengths, but which seed length is best. In SpEED, the authors have addressed this issue by developing a preprocessing algorithm that computes a range of good seed lengths. This algorithm computes all possible seed lengths between the minimum and maximum values, allowing for greater flexibility in selecting optimal seed lengths. Hartmut Häntze (2023) mentioned that Ilie and Ilie (2011) conducted tests on their algorithm for multiple spaced seeds, with a maximum weight of 18~\cite{haimo2023MaskedPanGenie}. However, MaskedPanGenie is designed for mid-size k-mers with a weight of 31. Therefore, it is unclear that SpEED may not be able to provide approximate optimal spaced seeds for this weight. As a result,  Hartmut Häntze used a more suitable approach to generate spaced seeds with a weight of 31 for the execution MaskedPanGenie.
+The Ilie and Ilie (2007) algorithm relies on user-defined seed lengths, but which seed length is best. In SpEED, the authors have addressed this issue by developing a preprocessing algorithm that computes a range of good seed lengths. This algorithm computes all possible seed lengths between the minimum and maximum values, allowing for greater flexibility in selecting optimal seed lengths. Hartmut Häntze (2023) mentioned that Ilie and Ilie (2011) conducted tests on their algorithm for multiple spaced seeds, with a maximum weight of 18~\cite{haimo2023MaskedPanGenie}. However, MaskedPanGenie is designed for mid-size k-mers with a weight of 31. Therefore, it is unclear that SpEED may not be able to provide highly sensitive spaced seeds for this weight. As a result,  Hartmut Häntze used a more suitable approach to generate spaced seeds with a weight of 31 for the execution MaskedPanGenie.
 \subsection{K-mer counting - Jellyfish}
 The task of k-mer counting is to count the number of substrings of length k in a string $S$ or a set of strings. The traditional approach involves using a dictionary structure with k-mers as keys and their counts as values. However, with the advent of high-throughput sequencing technologies~\cite{Reu2015Sequencing}, such as next-generation sequencing (NGS), which produce a massive amount of short sequences, optimizing time and memory usage becomes crucial.
 
@@ -233,11 +233,11 @@ Compared to mapping-based algorithms, PanGenie offers significant improvements i
 
 In summary, PanGenie provides a fast and accurate approach for genotyping genetic variants by leveraging haplotype-resolved assemblies and k-mer counts. It surpasses traditional mapping-based methods and enables the inclusion of variants in repetitive regions, expanding the scope of genome-wide association studies.
 \subsection{MaskedPanGenie pipeline}
-The use of approximate optimal spaced seed improves the genotyping results of MaskedPanGenie. For example, consider a sequence with a variant site. Previous research has shown that variants in the genome exhibit specific patterns of surrounding k-mers. By analyzing the observed patterns, likelihoods for the reference and alternative alleles can be calculated.
+The use of highly sensitive spaced seed improves the genotyping results of MaskedPanGenie. For example, consider a sequence with a variant site. Previous research has shown that variants in the genome exhibit specific patterns of surrounding k-mers. By analyzing the observed patterns, likelihoods for the reference and alternative alleles can be calculated.
 
 However, challenges arise when there is a base mutation near the variant site or sequencing errors in the reads covering the site(see Figure 2.2). These factors make it difficult to accurately identify the variant, thus affecting the final genotyping result.
 
-By employing approximate optimal spaced seed, MaskedPanGenie addresses these challenges more effectively. Approximate optimal spaced seed incorporates care and don't care positions, allowing for flexible matching. The spaced seed model accommodates mutations by allowing for some mismatches in predefined positions. Moreover, from a statistical perspective, the occurrences of spaced seeds at neighboring sequence positions are statistically less dependent than contiguous k-mers~\cite{Girotto2018FSH}.\\
+By employing highly sensitive spaced seed, MaskedPanGenie addresses these challenges more effectively. Approximate optimal spaced seed incorporates care and don't care positions, allowing for flexible matching. The spaced seed model accommodates mutations by allowing for some mismatches in predefined positions. Moreover, from a statistical perspective, the occurrences of spaced seeds at neighboring sequence positions are statistically less dependent than contiguous k-mers~\cite{Girotto2018FSH}.\\
 \begin{figure}
 	\centering
     \begin{subfigure}[t]{0.48\textwidth}
@@ -261,7 +261,7 @@ Overview the overall process of MaskedPanGenie(see Figure \ref{fig:MaskedPanGeni
 	\label{fig:MaskedPanGenie} % \ref{this label}
 \end{figure}
 
-To obtain a palindrome spaced seed with a length of 51 and weight of 31, the authors first use the SpEED tool to obtain an approximate optimal spaced seed with a length of 26 and weight of 16. They then extend this seed by appending its mirrored version on the right side to ensure it is palindromic.
+To obtain a palindrome spaced seed with a length of 51 and weight of 31, the authors first use the SpEED tool to obtain a highly sensitive spaced seed with a length of 26 and weight of 16. They then extend this seed by appending its mirrored version on the right side to ensure it is palindromic.
 
 Before entering the genotyping phase, preprocessing is performed to enable the use of spaced seed for counting k-mers in the variant graph (built from the pangenome) and reads. This involves using the MaskJelly tool, which applies a spaced seed to a given fasta or jellyfish file and outputs the spaced k-mers. Jellyfish is then used to count the occurrences of these k-mers.
 
