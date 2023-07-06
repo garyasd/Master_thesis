@@ -205,7 +205,7 @@ In the results chapter, various evaluation metrics are used to assess the impact
     recall = $\frac{TP}{TP + FN}$\hspace{0.5cm}precision = $\frac{TP}{TP + FP}$\hspace{0.5cm}F-score = 2 * $\dfrac{\text{precsion}*\text{recall}}{\text{precision} + \text{recall}}$
 \end{center}
 
-Recall, precision, and F-score are used to measure the differences between the predicted haplotypes and the true set of haplotypes. Variants in the predicted callsets can be classified as absent (0|0), heterozygous (1|0), homozygous (1|1), or undefined (*|*). True positive (TP), false positive (FP), and false negative (FN) are defined based on the most stringent model of "Best practices for benchmarking germline small-variant calls in human genomes."~\cite{Peter2019Metrics} TP refers to sides with identical alleles and genotype in both the truth and callset, while homozygous reference alleles are not counted as TPs for precision and recall.
+Recall, precision, and F-score are used to measure the differences between the predicted haplotypes and the true set of haplotypes. Variants in the predicted callsets can be classified as absent (0|0), heterozygous (1|0), homozygous (1|1), or undefined (*|*). True positive (TP), false positive (FP), and false negative (FN) are defined based on the most stringent model of "Best practices for benchmarking germline small-variant calls in human genomes"~\cite{Peter2019Metrics}. TP refers to sides with identical alleles and genotype in both the truth and callset, while homozygous reference alleles are not counted as TPs for precision and recall.
 
 Genotype concordance, which measures the proportion of correctly genotyped variants, is another metric for comparing callsets. However, genotype concordance may be biased when callsets contain variants from multiple samples, as the number of absent variants (0|0) can be higher than the number of variants with true genotypes (0|1 or 1|1). To address this, weighted genotype concordance (wGC) is used, where the number of correctly and erroneously classified variants of genotype x|y are labeled as Tx|y and Fx|y, respectively.
 \begin{center}
@@ -274,7 +274,7 @@ The processed files from the preprocessing stage are input into MaskedPanGenie f
 
 \chapter{Research Methodology}
 \section{PalindromeSpEED}
-Although there are several software tools available today to calculate spaced seed sets with better sensitivity, including SpEED~\cite{Lucian2011SpEED} and Rasbhari~\cite{Hahn2016Rasbhari}, as far as I know, there is no direct support for computing the optimal palindrome spaced seeds. This is because spaced seeds are more widely used in similarity and sequence alignment analyses. However, MaskedPanGenie uses canonical representations of k-mers, allowing matching of corresponding loci even if the read originates from the reverse strand~\cite{haimo2023MaskedPanGenie}. To obtain a palindrome spaced seed (e.g., length 51, weight 31), the authors of MaskedPanGenie used the SpEED tool to optimize a length 26 weight 16 spaced seed through 4680 iterations and then extended it with its mirrored version to ensure palindromicity.
+Although there are several software tools available today to calculate spaced seed sets with better sensitivity, including SpEED~\cite{Lucian2011SpEED} and Rasbhari~\cite{Hahn2016Rasbhari}, as far as I know, there is no direct support for computing the highly sensitive palindrome spaced seeds. This is because spaced seeds are more widely used in similarity and sequence alignment analyses. However, MaskedPanGenie uses canonical representations of k-mers, allowing matching of corresponding loci even if the read originates from the reverse strand~\cite{haimo2023MaskedPanGenie}. To obtain a palindrome spaced seed (e.g., length 51, weight 31), the authors of MaskedPanGenie used the SpEED tool to optimize a length 26 weight 16 spaced seed through 4680 iterations and then extended it with its mirrored version to ensure palindromicity.
 
 However, this approach does not guarantee the highest sensitivity for the obtained palindrome spaced seed pattern (with length 51 and weight 31). The SpEED tool has a maximum weight limit of 22 and does not allow setting the length. To address this, PalindromeSpEED, an algorithm based on SpEED, was developed to obtain better palindrome spaced seeds. The workflow is as follows:
 
@@ -329,7 +329,7 @@ Before delving into the modifications, it's important to understand two challeng
 1. If we directly select spaced seeds for each k-mer (e.g., from 51-mers to 31-mers), Jellfish automatically discards any k-mers that contain "N" symbols. Consequently, if the original FASTA file contains sequence errors (typically represented by "N"), the information around those "N" symbols is lost. However, spaced seeds have the potential to mask "N"-containing k-mers and retrieve valuable information (e.g., k-mers with variant sequence). Therefore, we cannot directly use Jellfish's built-in k-mer counting approach to handle spaced seeds.
 2. In Jellfish's file reading process, an "N" is added after each sequence to mark the start of a different sequence. If we only encode "N" as a symbol (e.g., A=0, C=1, G=2, T=3, N=4), errors occur during k-mer counting because "N" represents either a sequence error or the end of a sequence.
 
-To address these challenges, the modifications involve processing the sequences for spaced seeds before inserting them into Jellfish's buffer. The modified approach follows Jellfish's method of handling different sequences and appends an "N" to the end of each spaced k-mer. Additionally, a reference FASTA file is utilized, where each sequence represents a chromosome. An additional space is allocated to copy the final k-mer, as long sequences (exceeding the predetermined limit, typically 200 bp) cannot be processed at once. This copying method ensures that the entire read is properly processed even if it extends beyond the set limit.
+To address these challenges, the modifications involve processing the sequences for spaced seeds before inserting them into Jellfish's buffer. The modified approach follows Jellfish's method of handling different sequences and appends an "N" to the end of each spaced k-mer. Additionally, a reference FASTA file is utilized, where each sequence represents a haplotype. An additional space is allocated to copy the final k-mer, as long sequences (exceeding the predetermined limit, typically 200 bp) cannot be processed at once. This copying method ensures that the entire read is properly processed even if it extends beyond the set limit.
 \subsubsection{FSH\cite{Girotto2018FSH} algorithm applied in MaskedPanGenie}
 The FSH (Fast Spaced Seed Hashing Exploiting Adjacent Hashes) algorithm is employed to address the process of applying spaced seeds to genomic sequences in MaskedPanGenie. Spaced seed masking involves extracting specific sub-patterns from each read k-mer, such as removing certain positions based on the mask pattern (e.g., ATAACCT with a spaced seed of 1101100 becomes ATAC). However, this straightforward approach is slower compared to handling contiguous k-mers due to the shared subsequence property of contiguous k-mers.
 
@@ -443,7 +443,7 @@ The dataset used for evaluation was NA12878 with 30-fold coverage. In the contex
 \item Determining unique k-mers.
 \item Constructing an HMM (Hidden Markov Model) and calculating the most likely genotypes.
 \end{enumerate}
-The results in Table \ref{table:MaskedPanGenie} demonstrate a notable reduction in runtime for the revised MaskedPanGenie compared to the original MaskedPanGenie with preprocessing step. This improvement is primarily attributed to significant time savings in the preprocessing step and HMM step, resulting in an overall speedup of over 2x compared to Häntze's MaskedPanGenie. The primary factors contributing to this improvement are as follows:
+The results in Table \ref{table:MaskedPanGenie} demonstrate a notable reduction in runtime for the revised MaskedPanGenie compared to the original MaskedPanGenie with preprocessing step. This improvement is primarily attributed to significant time savings in the preprocessing step and determining unique k-mers step, resulting in an overall speedup of over 2x compared to Häntze's MaskedPanGenie. The primary factors contributing to this improvement are as follows:
 
 Firstly, the preprocessing step, which was the main target of modification, plays a crucial role in saving time and simplifying the pipeline. Instead of performing spaced seed processing beforehand, the revised pipeline integrates it into the second step, i.e., counting k-mers in reads and the pangenome graph. Consequently, the revised MaskedPanGenie exhibits longer runtime in the counting step compared to the original version.
 
@@ -496,7 +496,7 @@ The impact of spaced seed patterns on genotyping is analyzed in this study using
 \end{enumerate}
 By analyzing these scenarios, users can make informed decisions when choosing suitable spaced seed patterns in MaskedPanGenie for their genotyping needs.
 \subsection{Sensitivity}
-In this section, we aimed to investigate the impact of sensitivity values on the final genotyping results using different spaced seed patterns. Specifically, we set the spaced seed pattern (Table \ref{table:Sensitivity}) with a length of 51 and weight of 31, along with two additional contiguous seed patterns with lengths of 31 (seed0) and 51 (seed6). Among the spaced seed patterns, seed2 corresponds to the spaced seed used by the original author, while the other spaced seed patterns were generated using the PalindromeSpEED software and seed5 is the best palindrome spaced seed.
+In this section, we aimed to investigate the impact of sensitivity values on the final genotyping results using different spaced seed patterns. Specifically, we set the spaced seed pattern (Table \ref{table:Sensitivity}) with a length of 51 and weight of 31, along with two additional contiguous seed patterns with lengths of 31 (seed0) and 51 (seed6). Among the spaced seed patterns, seed3 corresponds to the spaced seed used by the original author, while the other spaced seed patterns were generated using the PalindromeSpEED software and seed5 is the best palindrome spaced seed.
 
 In this study, we not only aimed to validate the superiority of spaced seed patterns over contiguous seed patterns in achieving better genotyping results but also examined the effect of higher sensitivity values in the spaced seed patterns on the overall performance. Our findings indicate that spaced seed patterns, particularly those with higher sensitivity values, tend to yield improved genotyping results compared to contiguous seed patterns.
 
@@ -646,6 +646,7 @@ sv & seed0  & 0.682(SE=0.013)  & 0.671(SE=0.011)  & 0.616(SE=0.015)  & 0.642(SE=
 \end{tabular*}
 \caption{Genotyping results for \textbf{30-fold coverage } under \textbf{sensitivity}\label{table:sensitivity-30x}}
 \end{table*}
+\clearpage
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[scale=0.5]{figures/Sensitivity_genotyping_5x.png}
@@ -702,7 +703,7 @@ snv & seed0 & 0.957(SE=0.003)&  0.974(SE=0.003)&  0.952(SE=0.005)&  0.963(SE=0.0
    & seed3 & 0.972(SE=0.002) &0.978(SE=0.002)&0.964(SE=0.004)& 0.971(SE=0.002)\\
   
 \midrule
-sv & seed0  & 0.733(SE=0.02)&  0.675(SE=0.013)&  0.671(SE=0.019)&  0.673(SE=0.014) \\
+sv & seed0  & 0.733(SE=0.020)&  0.675(SE=0.013)&  0.671(SE=0.019)&  0.673(SE=0.014) \\
    & seed1 & 0.717(SE=0.015)&  0.664(SE=0.011)&  0.642(SE=0.020)&  0.653(SE=0.014)\\
    & seed2 & 0.706(SE=0.015)&  0.657(SE=0.010)&  0.626(SE=0.020)&  0.641(SE=0.013)\\
    & seed3 & 0.701(SE=0.016)&0.660(SE=0.012)&0.618(SE=0.02)&0.638(SE=0.013)\\
