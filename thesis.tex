@@ -118,7 +118,7 @@ The concept of spaced seeds was initially introduced by Ma et al. and was subseq
 
 Several software tools have been developed to generate highly sensitive spaced seeds, including SpEED~\cite{Lucian2011SpEED}, RasBhari~\cite{Hahn2016Rasbhari}, and Iedera~\cite{Kucherov2006Sensitivity}. These tools aim to optimize seed parameters, such as seed length, seed weight, and seed spacing, to maximize the sensitivity and specificity of seed-based algorithms. They employ different methods and algorithms to achieve seed optimization, resulting in improved performance and results for various genomic analysis tasks. Utilizing these tools can assist researchers in selecting the most suitable seed parameters for specific applications and datasets, thereby enhancing the accuracy and efficiency of alignment-free, k-mer-based algorithms in sequence analysis.
 
-MaskedPanGenie incorporates highly sensitive spaced seeds to enhance the alignment-free k-mer-based genotyper, PanGenie.This integration of spaced seeds improves the recall, F-score, and weighted genotype concordance (wGC) of PanGenie when genotyping SNPs, indels, and structural variations (SV) in reads with low (5x) and high (30x) coverage. Notably, significant improvements are observed in the genotyping accuracy of indels, with wGC increasing by up to 6.5\% at 30-fold coverage. These results highlight the efficacy of utilizing spaced seeds over simply increasing the length of contiguous k-mers in PanGenie, ultimately enhancing its performance in variant genotyping across different coverage scenarios.
+MaskedPanGenie incorporates highly sensitive spaced seeds to enhance the alignment-free k-mer-based genotyper, PanGenie.This integration of spaced seeds improves the recall, F-score, and weighted genotype concordance (wGC) of PanGenie when genotyping snv, indels, and structural variations (SV) in reads with low (5x) and high (30x) coverage. Notably, significant improvements are observed in the genotyping accuracy of indels, with wGC increasing by up to 6.5\% at 30-fold coverage. These results highlight the efficacy of utilizing spaced seeds over simply increasing the length of contiguous k-mers in PanGenie, ultimately enhancing its performance in variant genotyping across different coverage scenarios.
 
 However, MaskedPanGenie suffers from certain concerns.
 \begin{enumerate}[label=(\roman*)]
@@ -276,7 +276,7 @@ The processed files from the preprocessing stage are input into MaskedPanGenie f
 \section{PalindromeSpEED}
 Although there are several software tools available today to calculate spaced seed sets with better sensitivity, including SpEED~\cite{Lucian2011SpEED} and Rasbhari~\cite{Hahn2016Rasbhari}, as far as I know, there is no direct support for computing the highly sensitive palindrome spaced seeds. This is because spaced seeds are more widely used in similarity and sequence alignment analyses. However, MaskedPanGenie uses canonical representations of k-mers, allowing matching of corresponding loci even if the read originates from the reverse strand~\cite{haimo2023MaskedPanGenie}. To obtain a palindrome spaced seed (e.g., length 51, weight 31), the authors of MaskedPanGenie used the SpEED tool to optimize a length 26 weight 16 spaced seed through 4680 iterations and then extended it with its mirrored version to ensure palindromicity.
 
-However, this approach does not guarantee the highest sensitivity for the obtained palindrome spaced seed pattern (with length 51 and weight 31). The SpEED tool has a maximum weight limit of 22 and does not allow setting the length. To address this, PalindromeSpEED, an algorithm based on SpEED, was developed to obtain better palindrome spaced seeds. The workflow is as follows:
+However, this approach does not guarantee the highest sensitivity for the obtained palindrome spaced seed pattern (with length 51 and weight 31). The SpEED tool has a maximum weight limit of 18 and does not allow setting the length. To address this, PalindromeSpEED, an algorithm based on SpEED, was developed to obtain better palindrome spaced seeds. The workflow is as follows:
 
 Initially, a random palindrome spaced seed is generated based on user-defined length and weight. Then, through a series of iterations, optimization is performed. The optimization steps include randomly selecting two positions in the first half of the palindrome spaced seed where 1 and 0 combinations exist, flipping their values, and updating the corresponding positions in the second half to maintain the palindrome pattern. The overlap complexity of the modified palindrome spaced seed is calculated, and if it is lower than the current best overlap complexity, the modified seed becomes the new best result. This process continues for all possible combinations in the first half of the seed length, and the best flip results are used to modify the original palindrome spaced seed.
 
@@ -403,7 +403,7 @@ From the resulting graph (Fig \ref{fig:MaskJelly_thread}), it became evident tha
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.7]{figures/MaskJelly_thread.png}
-	\caption{Execution time for MaskeJelly on different numbers of threads and Jellyfish count for 16 threads}
+	\caption{Execution time for MaskJelly on different numbers of threads and Jellyfish count for 16 threads}
 	\label{fig:MaskJelly_thread} % \ref{this label}
 \end{figure}
 
